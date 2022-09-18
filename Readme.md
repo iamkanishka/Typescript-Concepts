@@ -4,7 +4,7 @@
 # AngularUnittesting
 
 <p align="center">
-<a  target="blank"><img src="https://miro.medium.com/max/725/1*EKbZZOcx2IfRAe4bYF_eeQ.png" width="320" alt="Coder Logo" /></a>
+<a  target="blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width="320" alt="Coder Logo" /></a>
 </p>
 
 
