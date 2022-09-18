@@ -27,3 +27,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 1. What is Typescript language and Why should ou use it in the place of javascript.
 2. Installing Typescript Compiler in the Project and System. Compiling the ts File with tsc command.
 3. Compiling Typescript Code and Compare the Compiled javascript code with typescript code.
+4. Typescript Types. Ltes learn the typescript types like number, boolean and strings.
