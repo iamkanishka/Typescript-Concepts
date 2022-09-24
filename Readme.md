@@ -34,3 +34,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 8. Tuples in the Typescript.Lets learn the tuples data type in the typescript language.
 9. Enums(Enumerated Types) in the Typescript. Using Enumeration Enum Types in the Typescript.
 10. Basics of the Any and Union Types in the Typescript language.
+11. Literal Types in the Typescript.Combine the Literal Types and the Union Types in Typescript.
