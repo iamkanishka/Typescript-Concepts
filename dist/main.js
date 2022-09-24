@@ -1,11 +1,9 @@
 "use strict";
-let button = document.querySelector('button');
-function clickhandler(message) {
-    console.log('clicked');
+class Department {
+    constructor(name) {
+        this.name = name;
+    }
 }
-if (button) {
-    button.addEventListener('click', clickhandler.bind(null, 'you are clicked'));
-}
-let map = new Map();
-console.log('map' + map);
+let department = new Department('Science');
+console.log(department);
 //# sourceMappingURL=main.js.map

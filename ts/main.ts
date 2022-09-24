@@ -1,17 +1,12 @@
-let button = document.querySelector('button')!;
+class Department{
+  name:string;
 
-
-function clickhandler(message:string){
-    console.log('clicked');
-    
+  constructor(name:string){
+    this.name=name
+  }
 }
 
 
-if(button){
-button.addEventListener('click',clickhandler.bind(null,'you are clicked'))
-}
-
-let map = new Map()
-console.log('map'+map);
-//THis is Analytics Comments 
-
+let department = new Department('Science')
+console.log(department);
+ 

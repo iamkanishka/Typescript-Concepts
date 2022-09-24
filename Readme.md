@@ -47,3 +47,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 21. Use of noEmitOnError option in the tsconfig.json configuration file in typescript.
 22. Strict Compilation Mode Options in the tsconfig configuration file in Typescript.
 23. Code Quality Checks Present in the tsconfig configuration file in Typescript.
+24. Creating Classes with constructors in Typescript. How Class is compiled by Typescript compiler.
