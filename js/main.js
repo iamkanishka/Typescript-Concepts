@@ -1,7 +1,8 @@
 "use strict";
-var button = document.querySelector('button');
-button.addEventListener('click', function () {
+let button = document.querySelector('button');
+button.addEventListener('click', () => {
     console.log('click');
 });
-var map = new Map();
+let map = new Map();
 console.log('map' + map);
+//# sourceMappingURL=main.js.map
