@@ -1,9 +1,23 @@
-function add(number1, number2) {
-    return number1 + number2;
+var userInput;
+var userName;
+userInput = 5;
+userInput = "kanishka";
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-function printResult(value) {
-    console.log('Result ' + value);
+function generateError(message, code) {
+    throw { message: message, code: code };
+    //return;
 }
-var combineValues;
-combineValues = add;
-console.log(combineValues(1, 2));
+function generate() {
+    console.log('hello');
+    return;
+}
+console.log(generate());
+try {
+    var result = generateError('Invalid Error', 500);
+    console.log(result);
+}
+catch (err) {
+    console.log(err);
+}

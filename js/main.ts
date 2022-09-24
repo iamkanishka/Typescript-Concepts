@@ -1,15 +1,29 @@
-function add(number1:number, number2:number):number{
-    return number1 + number2;
+let userInput:unknown;
+let userName:string;
+
+userInput = 5;
+userInput ="kanishka"
+
+if(typeof userInput === 'string'){
+  userName =  userInput
+}
+ 
+function generateError(message:string, code:number):never{
+  throw {message, code};
+  //return;
+}
+function generate():void{
+    console.log('hello');
+    return;
 }
 
-function printResult(value:number):void{
-    console.log('Result ' + value );
+console.log(generate());
+
+try{
+
+let result  = generateError('Invalid Error', 500);
+console.log(result);
+}catch(err){
+    console.log(err);
+    
 }
-
-let combineValues:(a:number, b:number)=>number;
-
-combineValues =add
-
-console.log(combineValues(1,2));
-
-
