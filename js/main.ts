@@ -1,28 +1,9 @@
-let userInput:unknown;
-let userName:string;
-userInput = 5;
-userInput ="kanishka"
+let button = document.querySelector('button')!;
 
-if(typeof userInput === 'string'){
-  userName =  userInput
-}
- 
-function generateError(message:string, code:number):never{
-  throw {message, code};
-  //return;
-}
-function generate():void{
-    console.log('hello');
-    return;
-}
+button.addEventListener('click',()=>{
+  console.log('click');
+  
+})
 
-console.log(generate());
-
-try{
-
-let result  = generateError('Invalid Error', 500);
-console.log(result);
-}catch(err){
-    console.log(err);
-    
-}
+let map = new Map()
+console.log('map'+map);
