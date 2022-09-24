@@ -1,8 +1,13 @@
-let person:{
-    name:string;
-    age:number;
-} ={
+let person={
     name:"leela",
     age:31,
+    hobbies:['sports', 'cooking'],
 }
-console.log(person.name);
+
+let favorites:string[] 
+favorites = ['animals']
+
+for (let hobby of person.hobbies){
+    console.log(hobby.toUpperCase());
+    
+}
