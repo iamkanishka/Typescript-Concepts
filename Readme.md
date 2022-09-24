@@ -41,4 +41,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 15. Typescript Compiler using watch mode. Compiling the entire project for the multiple ts File.
 16. Include and Exclude ts Files with the tsconfig.josn configuration file in Typescript.
 17.  Setting up the Compilation Target to ES2016 in the typescript configuration tsconfig.ts.
-18. Inderstanding Typescript core libs in the tsconfig.sjon file
+18. Understanding Typescript core libs in the tsconfig.json file
