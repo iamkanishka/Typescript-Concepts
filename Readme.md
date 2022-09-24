@@ -40,4 +40,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 14. Unknown Type and Never Type in Typescript. Know all aboit the unknown and never Types.
 15. Typescript Compiler using watch mode. Compiling the entire project for the multiple ts File.
 16. Include and Exclude ts Files with the tsconfig.josn configuration file in Typescript.
+17.  Setting up the Compilation Target to ES2016 in the typescript configuration tsconfig.ts.
 
