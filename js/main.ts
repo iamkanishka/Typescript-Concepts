@@ -6,5 +6,10 @@ function printResult(value:number):void{
     console.log('Result ' + value );
 }
 
-console.log(printResult(add(1,2)))
+let combineValues:(a:number, b:number)=>number;
+
+combineValues =add
+
+console.log(combineValues(1,2));
+
 

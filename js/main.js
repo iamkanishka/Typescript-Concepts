@@ -4,4 +4,6 @@ function add(number1, number2) {
 function printResult(value) {
     console.log('Result ' + value);
 }
-console.log(printResult(add(1, 2)));
+var combineValues;
+combineValues = add;
+console.log(combineValues(1, 2));
