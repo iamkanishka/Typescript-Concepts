@@ -45,3 +45,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 19. Typescript more compilation options and working with the source maps in tsconfig.json.
 20. Know about RootDir and OutDir in the tsconfig.json configuration file in Typescript.
 21. Use of noEmitOnError option in the tsconfig.json configuration file in typescript.
+22. Strict Compilation Mode Options in the tsconfig configuration file in Typescript.

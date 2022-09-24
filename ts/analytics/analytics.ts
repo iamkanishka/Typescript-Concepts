@@ -1,2 +1,7 @@
-console.log('Analytics Data');
-//THis is Analytics Comments 
+
+
+function sendAnalytics(data:string){
+   console.log(data);
+ };
+
+sendAnalytics('send Data')
