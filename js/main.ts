@@ -3,7 +3,7 @@ enum RESUL_TYPES{
     AS_STRING ='as-string'
 }
 
-function combine(input1:number | string, input2:number | string, resultType: RESUL_TYPES ){
+function combine(input1:number | string, input2:number | string, resultType: RESUL_TYPES.AS_NUMBER|RESUL_TYPES.AS_STRING){
     let result
     if(typeof(input1)==='number'&&typeof(input2)==='number'){
     result = input1 + input2;
