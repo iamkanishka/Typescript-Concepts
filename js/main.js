@@ -1,15 +1,21 @@
+var ROLES;
+(function (ROLES) {
+    ROLES["ADMIN"] = "ADMIN";
+    ROLES[ROLES["AUTHOR"] = 0] = "AUTHOR";
+    ROLES[ROLES["GUEST"] = 1] = "GUEST";
+})(ROLES || (ROLES = {}));
+//JS Enum
+// const USER_ADMIN =1
+// const USER_AUTHOUR=2
 var person = {
     name: "leela",
     age: 31,
     hobbies: ['sports', 'cooking'],
-    role: [2, 'author']
+    role: ROLES.ADMIN
 };
-//typescript dosent understand the 
-person.role[0] = 1;
-person.role[1] = 'admin';
-person.role.push('admin');
-//typescript gives error in the inteliscence if the types are mismatched
-//person.role= [1,'kanishka','asdcbasdc']
+if (person.role === ROLES.ADMIN) {
+    console.log('role is admin');
+}
 for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
     var hobby = _a[_i];
     console.log(hobby.toUpperCase());

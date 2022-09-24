@@ -1,24 +1,24 @@
-let person:{
-    name:string;
-    age:number;
-    hobbies:string[];
-    role:[number,string]
-}={
+enum ROLES {
+    ADMIN="ADMIN",
+    AUTHOR=0,
+    GUEST 
+}
+
+//JS Enum
+// const USER_ADMIN =1
+// const USER_AUTHOUR=2
+
+let person={
     name:"leela",
     age:31,
     hobbies:['sports', 'cooking'],
-    role:[2, 'author']
+    role: ROLES.ADMIN
 };
 
-person.role[0] =1;
-person.role[1]='admin'
-
-//typescript dosent understand the push/pop of a array, so its donsent throw error when the types are mismatched. 
-person.role.push('admin');
-
-
-//typescript gives error in the inteliscence if the types are mismatched
-//person.role= [1,'kanishka','asdcbasdc']
+if(person.role===ROLES.ADMIN){
+    console.log('role is admin');
+    
+}
 
 for (let hobby of person.hobbies){
     console.log(hobby.toUpperCase());
