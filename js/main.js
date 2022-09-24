@@ -1,12 +1,13 @@
-var userInput;
-var userName;
+"use strict";
+let userInput;
+let userName;
 userInput = 5;
 userInput = "kanishka";
 if (typeof userInput === 'string') {
     userName = userInput;
 }
 function generateError(message, code) {
-    throw { message: message, code: code };
+    throw { message, code };
     //return;
 }
 function generate() {
@@ -15,7 +16,7 @@ function generate() {
 }
 console.log(generate());
 try {
-    var result = generateError('Invalid Error', 500);
+    let result = generateError('Invalid Error', 500);
     console.log(result);
 }
 catch (err) {
