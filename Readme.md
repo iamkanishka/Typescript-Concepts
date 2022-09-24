@@ -39,4 +39,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 13. Assign Function as Types to a Variable with argument types adn retrun types in Typescript.
 14. Unknown Type and Never Type in Typescript. Know all aboit the unknown and never Types.
 15. Typescript Compiler using watch mode. Compiling the entire project for the multiple ts File.
+16. Include and Exclude ts Files with the tsconfig.josn configuration file in Typescript.
 
