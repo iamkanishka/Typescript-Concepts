@@ -28,3 +28,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 2. Installing Typescript Compiler in the Project and System. Compiling the ts File with tsc command.
 3. Compiling Typescript Code and Compare the Compiled javascript code with typescript code.
 4. Typescript Types. Ltes learn the typescript types like number, boolean and strings.
+5. Type Assignmemt and Type inference. Assign type directly to variable while declaring. Typescript.
+6. Object Types in the Typescript. Decalring the type for the object in the Typescript.
