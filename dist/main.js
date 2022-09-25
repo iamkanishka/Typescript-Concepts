@@ -11,10 +11,15 @@ class Department {
     addEmployee(employee) {
         this.employees.push(employee);
     }
+    static createEmployee(name) {
+        Department.financialYear;
+        return { name: name };
+    }
     printEmployee() {
         console.log(this.employees.length, this.employees);
     }
 }
+Department.financialYear = 2020;
 class ITDepartment extends Department {
     constructor(id, admin) {
         super(id, 'ITdepartment');
@@ -69,6 +74,7 @@ Accounting.addReport('Film Reports');
 console.log(Accounting.mostRecentReport);
 Accounting.setRecentReport = "OTT Reports";
 console.log(Accounting.mostRecentReport);
+console.log(Department.createEmployee('kanishka'), Department.financialYear);
 Accounting.printEmployee();
 Accounting.printReports();
 console.log(Accounting);

@@ -1,18 +1,20 @@
 class Department {
-
+  
   protected employees: string[] = []
-
+  static readonly financialYear = 2020;
   constructor(private readonly id: string, public name: string) { }
 
   describe(this: Department) {
     console.log(`department with id ${this.id} : ${this.name}`);
-
-  }
+   }
 
   addEmployee(employee: string) {
-
     this.employees.push(employee)
   }
+  static createEmployee(name: string) {
+    Department.financialYear
+    return {name:name}
+   }
   printEmployee() {
     console.log(this.employees.length, this.employees);
 
@@ -40,6 +42,8 @@ class AccountingDepartment extends Department {
     }
     super.addEmployee(employee)
   }
+
+
 
   addReport(report: string) {
     this.reports.push(report);
@@ -83,6 +87,9 @@ console.log(Accounting.mostRecentReport);
 
 Accounting.setRecentReport = "OTT Reports"
 console.log(Accounting.mostRecentReport);
+//Department.financialYear = 4335
+console.log(Department.createEmployee('kanishka'), Department.financialYear);
+
 
 Accounting.printEmployee();
 Accounting.printReports()

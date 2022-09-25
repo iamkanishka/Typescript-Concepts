@@ -55,3 +55,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 29. Implememting Inheritance concept in the typescript.
 30. Overiding Properties and Methods and The Proetcted Access Modifier in the Typescript Class.
 31. Implememting Getters and Setters in the Typescript Classes.
+32. Static Methods and Static Properties in the Typescript Classes.
