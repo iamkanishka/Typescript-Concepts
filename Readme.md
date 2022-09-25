@@ -60,3 +60,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 34. Private Constructors and SingleTom Design Pattern implementation in the Typescript.
 35. Interfaces in Typescript. Defeine teh structure of the Object using the Interface.
 36. Implementing interfaces with classes in the typescript.
+37. Extending Interfaces nad Readonly Interface Properties in the Typescript.

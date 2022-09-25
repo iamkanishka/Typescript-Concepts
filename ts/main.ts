@@ -1,5 +1,8 @@
-interface IPerson {
-  name: string,
+interface IName{
+  readonly name:string
+}
+
+interface IPerson extends IName {
   age:number,
   hello(phrase: string): void
 }
@@ -19,6 +22,7 @@ class Person implements IPerson{
 
 let kanishka:Person = new Person('kanishka' , 55)
 let john: IPerson = new Person('john' , 55)
+
 
 kanishka.hello('Hello Kanishka');
 kanishka.greet()
