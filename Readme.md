@@ -53,3 +53,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 27. ShotHand Notation of Public and Private Properties in the Class Contructors -Typescript.
 28. Declare Readonly Properties in the Typescript Class.
 29. Implememting Inheritance concept in the typescript.
+30. Overiding Properties and Methods and The Proetcted Access Modifier in the Typescript Class.

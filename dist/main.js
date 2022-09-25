@@ -27,6 +27,12 @@ class AccountingDepartment extends Department {
         super(id, 'Accounting');
         this.reports = reports;
     }
+    addEmployee(employee) {
+        if (employee === 'Atomlesmmind') {
+            return;
+        }
+        super.addEmployee(employee);
+    }
     addReport(report) {
         this.reports.push(report);
     }
@@ -36,9 +42,11 @@ class AccountingDepartment extends Department {
 }
 ;
 const it = new ITDepartment('D3', ['kansihka']);
+it.addEmployee('Atomlesmmind');
 console.log(it);
 const Accounting = new AccountingDepartment('A6', ['HR Reports', 'IT Reports']);
 Accounting.addEmployee('Atomlesmmind');
+Accounting.addEmployee('Atomlesmmind from Accounting');
 Accounting.addReport('Accountion Reports');
 Accounting.printEmployee();
 Accounting.printReports();
