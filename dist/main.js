@@ -56,6 +56,13 @@ class AccountingDepartment extends Department {
     printReports() {
         console.log(this.reports);
     }
+    static getInstance() {
+        if (AccountingDepartment.Instance) {
+            return this.Instance;
+        }
+        this.Instance = new AccountingDepartment('A6', ['HR Reports', 'IT Reports']);
+        return this.Instance;
+    }
     describe() {
         console.log('Accounting Department with Id: ' + this.id);
     }
@@ -76,7 +83,9 @@ class AccountingDepartment extends Department {
 const it = new ITDepartment('D3', ['kansihka']);
 it.addEmployee('Atomlesmmind');
 it.describe();
-const Accounting = new AccountingDepartment('A6', ['HR Reports', 'IT Reports']);
+const Accounting = AccountingDepartment.getInstance();
+const Accounting2 = AccountingDepartment.getInstance();
+console.log(Accounting, Accounting2);
 Accounting.addEmployee('Atomlesmmind');
 Accounting.addEmployee('Atomlesmmind from Accounting');
 Accounting.addEmployee('Goku');

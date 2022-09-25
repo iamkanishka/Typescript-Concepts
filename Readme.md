@@ -57,3 +57,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 31. Implememting Getters and Setters in the Typescript Classes.
 32. Static Methods and Static Properties in the Typescript Classes.
 33. Abstract Classes and abstract methods in teh Typescript.
+34. Private Constructors and SingleTom Design Pattern implementation in the Typescript.
