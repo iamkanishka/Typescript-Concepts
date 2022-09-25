@@ -1,22 +1,31 @@
-class Department{
-  name:string;
+class Department {
+  public name: string;
+  private employees: string[] = []
 
-  constructor(name:string){
-    this.name=name
+  constructor(name: string) {
+    this.name = name
   }
 
-  describe(this:Department){
+  describe(this: Department) {
     console.log('department is ' + this.name);
-    
+
   }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee)
+  }
+  printEmployee() {
+    console.log(this.employees.length, this.employees);
+
+  }
+
+
 }
 
 
-let department = new Department('Science')
-department.describe();
+let department = new Department('Science');
+department.addEmployee('Kanishka');
+department.addEmployee('Atomlessmind');
 
+department.printEmployee()
 
-let departmentCopy = {name:'kanishka',describe:department.describe}
-console.log(departmentCopy);
-
-departmentCopy.describe.bind(department)()
