@@ -21,11 +21,36 @@ class Department {
 
 }
 
+class ITDepartment extends Department{
+  constructor(id:string,public readonly admin:string[]){
+    super(id,'ITdepartment');
+  }
+};
 
-let department = new Department('D1','Science');
-department.describe()
-department.addEmployee('Kanishka');
-department.addEmployee('Atomlessmind');
+class AccountingDepartment extends Department{
+  constructor(id:string,public readonly reports:string[]){
+    super(id,'Accounting');
+  }
+  addReport(report:string){
+   this.reports.push(report);
+  }
+  printReports(){
+  console.log(this.reports);
+  
+  }
 
-department.printEmployee()
+};
 
+ const it = new ITDepartment('D3',['kansihka'])
+ console.log(it);
+
+ const Accounting = new AccountingDepartment('A6',['HR Reports','IT Reports'])
+ Accounting.addEmployee('Atomlesmmind');
+ Accounting.addReport('Accountion Reports');
+ Accounting.printEmployee();
+ Accounting.printReports()
+ console.log(Accounting);
+
+
+
+ 

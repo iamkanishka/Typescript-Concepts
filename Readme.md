@@ -52,3 +52,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 26. Public and Private Access Modifiers for Properties and mestods in the Typescript.
 27. ShotHand Notation of Public and Private Properties in the Class Contructors -Typescript.
 28. Declare Readonly Properties in the Typescript Class.
+29. Implememting Inheritance concept in the typescript.
