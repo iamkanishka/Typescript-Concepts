@@ -1,46 +1,24 @@
-// type addfunc=(a:number,b:number)=>number;
-
-interface addfunc {
-  (a: number, b: number): number
+interface Admmin{
+  name:string;
+  role:string[]
 }
 
-var add: addfunc
-add = (x: number, y: number) => { return x + y }
-
-interface IName {
-  readonly name: string
-  secondName?: string
-
+interface Employee{
+  name:string;
+  startDate:Date
 }
 
-interface IPerson extends IName {
-  age?: number,
-  hello(phrase: string): void
+interface superEmployee extends Admmin, Employee{}
+
+let emp :superEmployee={
+  name:'Kanishka',
+  role:['admin'],
+  startDate: new Date()
 }
 
+type combinable = number | string;
+type numeric = number | boolean
 
-class Person implements IPerson {
-  constructor(public name: string, public age?: number) { };
-  hello(phrase: string,): void {
-    if (this.age) {
-      console.log('phrase' + phrase + "My Age is " + this.age);
-    } else {
-      console.log('phrase' + phrase);
+type universal = combinable & numeric;
 
-    }
-  }
-
-  greet() {
-    console.log('Hi ' + this.name);
-
-  }
-}
-
-let kanishka: Person = new Person('kanishka')
-let john: IPerson = new Person('john', 55)
-
-
-kanishka.hello('Hello Kanishka');
-kanishka.greet()
-john.hello('Hello john');
-
+var x :universal =10

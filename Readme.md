@@ -63,4 +63,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 37. Extending Interfaces nad Readonly Interface Properties in the Typescript.
 38. Implement Interfaces as Function Types in the Typescript.
 39. Optional Parameters and Properties for inheritence and Class in Typescript.
+40. Implement Intersection Types in the Typescript.
 
