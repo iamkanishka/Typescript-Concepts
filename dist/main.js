@@ -1,4 +1,6 @@
 "use strict";
+var add;
+add = (x, y) => { return x + y; };
 class Person {
     constructor(name, age) {
         this.name = name;

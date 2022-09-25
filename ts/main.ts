@@ -1,3 +1,12 @@
+// type addfunc=(a:number,b:number)=>number;
+
+interface addfunc{
+  (a:number,b:number):number
+}
+
+var add:addfunc
+add = (x:number,y:number)=>{return x+y}
+
 interface IName{
   readonly name:string
 }
