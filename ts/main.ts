@@ -1,12 +1,10 @@
-class Department {
+abstract class Department {
   
   protected employees: string[] = []
   static readonly financialYear = 2020;
-  constructor(private readonly id: string, public name: string) { }
+  constructor(protected readonly id: string, public name: string) { }
 
-  describe(this: Department) {
-    console.log(`department with id ${this.id} : ${this.name}`);
-   }
+ abstract describe():void 
 
   addEmployee(employee: string) {
     this.employees.push(employee)
@@ -27,6 +25,20 @@ class ITDepartment extends Department {
   constructor(id: string, public readonly admin: string[]) {
     super(id, 'ITdepartment');
 
+  }
+  describe() {
+    console.log('IT Department with Id: ' + this.id);
+    
+}
+};
+
+class HRDepartment extends Department {
+  constructor(id: string, public readonly admin: string[]) {
+    super(id, 'ITdepartment');
+
+  }
+  describe() {
+    console.log('HR Department with Id: ' + this.id);
   }
 };
 
@@ -55,6 +67,11 @@ class AccountingDepartment extends Department {
 
   }
 
+describe() {
+    console.log('Accounting Department with Id: ' + this.id);
+    
+}
+
   get mostRecentReport() {
     if (!this.lastRecord) {
       throw new Error('No Reports Found');
@@ -72,7 +89,7 @@ class AccountingDepartment extends Department {
 const it = new ITDepartment('D3', ['kansihka'])
 it.addEmployee('Atomlesmmind');
 
-console.log(it);
+it.describe();
 
 const Accounting = new AccountingDepartment('A6', ['HR Reports', 'IT Reports'])
 Accounting.addEmployee('Atomlesmmind');
@@ -94,6 +111,8 @@ console.log(Department.createEmployee('kanishka'), Department.financialYear);
 Accounting.printEmployee();
 Accounting.printReports()
 console.log(Accounting);
+Accounting.describe();
+
 
 
 

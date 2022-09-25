@@ -5,9 +5,6 @@ class Department {
         this.name = name;
         this.employees = [];
     }
-    describe() {
-        console.log(`department with id ${this.id} : ${this.name}`);
-    }
     addEmployee(employee) {
         this.employees.push(employee);
     }
@@ -24,6 +21,19 @@ class ITDepartment extends Department {
     constructor(id, admin) {
         super(id, 'ITdepartment');
         this.admin = admin;
+    }
+    describe() {
+        console.log('IT Department with Id: ' + this.id);
+    }
+}
+;
+class HRDepartment extends Department {
+    constructor(id, admin) {
+        super(id, 'ITdepartment');
+        this.admin = admin;
+    }
+    describe() {
+        console.log('HR Department with Id: ' + this.id);
     }
 }
 ;
@@ -46,6 +56,9 @@ class AccountingDepartment extends Department {
     printReports() {
         console.log(this.reports);
     }
+    describe() {
+        console.log('Accounting Department with Id: ' + this.id);
+    }
     get mostRecentReport() {
         if (!this.lastRecord) {
             throw new Error('No Reports Found');
@@ -62,7 +75,7 @@ class AccountingDepartment extends Department {
 ;
 const it = new ITDepartment('D3', ['kansihka']);
 it.addEmployee('Atomlesmmind');
-console.log(it);
+it.describe();
 const Accounting = new AccountingDepartment('A6', ['HR Reports', 'IT Reports']);
 Accounting.addEmployee('Atomlesmmind');
 Accounting.addEmployee('Atomlesmmind from Accounting');
@@ -78,4 +91,5 @@ console.log(Department.createEmployee('kanishka'), Department.financialYear);
 Accounting.printEmployee();
 Accounting.printReports();
 console.log(Accounting);
+Accounting.describe();
 //# sourceMappingURL=main.js.map
