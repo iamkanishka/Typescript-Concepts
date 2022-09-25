@@ -58,3 +58,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 32. Static Methods and Static Properties in the Typescript Classes.
 33. Abstract Classes and abstract methods in teh Typescript.
 34. Private Constructors and SingleTom Design Pattern implementation in the Typescript.
+35. Interfaces in Typescript. Defeine teh structure of the Object using the Interface.
