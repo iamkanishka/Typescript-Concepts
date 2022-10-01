@@ -10,4 +10,8 @@ function getCountandDescribe(element) {
     return [element, text];
 }
 console.log(getCountandDescribe(['zdfv']));
+function extractObject(obj, key) {
+    return obj[key];
+}
+extractObject({ name: "kanishka", age: 77 }, 'age');
 //# sourceMappingURL=main.js.map

@@ -15,3 +15,9 @@ function getCountandDescribe<T extends Lengthy>(element:T):[T,string]{
 }
 
 console.log(getCountandDescribe(['zdfv']));
+
+function extractObject<T extends object, U extends keyof T>(obj:T, key:U){
+  return obj[key];
+}
+
+extractObject({name:"kanishka",age:77},'age')

@@ -74,5 +74,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 48. Creting a Generic Function in the Typescript.
 49. Create Generic Function with Contraints using extends keyword in Typescript.
 50. Create Another Example of Generic Function along with interface in the Typescript.
-
+51. Create Generic Function with key of Constraints in the Typescript.
 
