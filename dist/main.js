@@ -42,11 +42,12 @@ numberStorage.addData(3);
 numberStorage.addData(3);
 numberStorage.removeData(2);
 console.log(numberStorage.getData());
-const objectStorage = new dataStorage();
-let obj = { name: 'kanishka' };
-objectStorage.addData(obj);
-objectStorage.addData({ name: 'naik' });
-objectStorage.addData({ name: 'gadgetguy' });
-objectStorage.removeData(obj);
-console.log(objectStorage.getData());
+function addCourse(title, description, addedDate) {
+    let data = {};
+    data.title = title;
+    data.description = description,
+        data.addedDate = addedDate;
+    return data;
+}
+let names = ['Kannu', 'laial'];
 //# sourceMappingURL=main.js.map

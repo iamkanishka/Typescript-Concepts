@@ -23,7 +23,7 @@ function extractObject<T extends object, U extends keyof T>(obj:T, key:U){
 extractObject({name:"kanishka",age:77},'age')
 
 
-class dataStorage<T>{
+class dataStorage<T extends string | number | boolean>{
   public data:Array<T> =[];
   addData(item:T){
     this.data.push(item);
@@ -62,13 +62,30 @@ console.log(numberStorage.getData());
 
 
 
-const objectStorage = new dataStorage<object>();
-let obj={name:'kanishka'}
-objectStorage.addData(obj);
-objectStorage.addData({name:'naik'});
-objectStorage.addData({name:'gadgetguy'});
-objectStorage.removeData(obj)
-console.log(objectStorage.getData());
+// const objectStorage = new dataStorage<object>();
+// let obj={name:'kanishka'}
+// objectStorage.addData(obj);
+// objectStorage.addData({name:'naik'});
+// objectStorage.addData({name:'gadgetguy'});
+// objectStorage.removeData(obj)
+// console.log(objectStorage.getData());
 
 
+interface Course{
+  title:string,
+  description:string,
+  addedDate:Date
+}
 
+function addCourse(title:string, description:string, addedDate:Date){
+     let data : Partial<Course> ={}
+     data.title=title;
+     data.description=description,
+     data.addedDate = addedDate
+     return <Course>data
+     //return  data as Course
+
+    }
+
+    let names :Readonly<string[]> =['Kannu','laial'];
+    
