@@ -67,4 +67,6 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 41. Type Guards in the Typescript. Type guard checking for the numbers, objects and Classes.
 42. Discriminated Union Types in the Typescript.
 43. DOM and Typecasting in the Typescript. Cast Values in the Typescript.
+44. Index Type Properties in the Typescript. Define Interface for the Object Property Keys.
+
 

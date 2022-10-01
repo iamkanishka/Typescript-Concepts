@@ -142,3 +142,15 @@ paragraph.value = 'user Input'
 if(paragraph){
   (paragraph as HTMLInputElement).value='user Inputt'
 }
+
+
+interface ErrorContaincer{
+  [prop:string]: string
+}
+
+let errorbag:ErrorContaincer ={
+  email:'Email is Valid',
+  username:'UserName is Valid',
+};
+
+

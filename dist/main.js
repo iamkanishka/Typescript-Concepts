@@ -80,4 +80,8 @@ paragraph.value = 'user Input';
 if (paragraph) {
     paragraph.value = 'user Inputt';
 }
+let errorbag = {
+    email: 'Email is Valid',
+    username: 'UserName is Valid',
+};
 //# sourceMappingURL=main.js.map
