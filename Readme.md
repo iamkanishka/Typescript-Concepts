@@ -73,5 +73,6 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 47. Generics in Typescript. Built in Generics available in the Typescipt.
 48. Creting a Generic Function in the Typescript.
 49. Create Generic Function with Contraints using extends keyword in Typescript.
+50. Create Another Example of Generic Function along with interface in the Typescript.
 
 

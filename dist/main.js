@@ -1,7 +1,13 @@
 "use strict";
-function merge(objA, objB) {
-    return Object.assign(objA, objB);
+function getCountandDescribe(element) {
+    let text = 'Got No Value';
+    if (element.length == 1) {
+        text = 'Got 1 value';
+    }
+    if (element.length > 1) {
+        text = 'Got' + element.length + 'value';
+    }
+    return [element, text];
 }
-const data = merge({ name: 'Kanishka' }, { age: 30 });
-console.log(data);
+console.log(getCountandDescribe(['zdfv']));
 //# sourceMappingURL=main.js.map
