@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 let emp = {
     name: 'Kanishka',
     roles: ['admin'],
@@ -12,6 +13,14 @@ function getAdd(a, b) {
     return a + b;
 }
 const result = getAdd(1, 4);
+const userData = {
+    name: 'Kanishka',
+    job: { title: 'CEO', description: 'My Company' },
+};
+console.log((_a = userData === null || userData === void 0 ? void 0 : userData.job) === null || _a === void 0 ? void 0 : _a.title);
+const userInput = null;
+const storedData = userInput !== null && userInput !== void 0 ? userInput : 'Default';
+console.log(storedData);
 function printEmployee(emp) {
     console.log('name' + emp.name);
     if ('roles' in emp) {

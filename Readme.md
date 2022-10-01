@@ -69,6 +69,7 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 43. DOM and Typecasting in the Typescript. Cast Values in the Typescript.
 44. Index Type Properties in the Typescript. Define Interface for the Object Property Keys.
 45. Function Overloads in the Typescript.Defining the return types with Function Overload.
+46. Optional Properties Chaining and Null coalscing in the Typescript.
 
 
 

@@ -34,7 +34,23 @@ function getAdd(a: combinable, b: combinable) {
   return a + b;
 }
 
-const result = getAdd(1,4)
+const result = getAdd(1,4);
+
+
+const userData={
+  name:'Kanishka',
+  job:{title:'CEO', description:'My Company'},
+
+}
+
+console.log(userData?.job?.title);
+
+const userInput = null;
+//const storedData = userInput || 'Default';
+const storedData = userInput ?? 'Default';
+
+console.log(storedData);
+
 
 type unknownEmployee = Admin | Employee
 
