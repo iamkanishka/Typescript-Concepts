@@ -1,12 +1,10 @@
-let names: Array<string> =[]; //string[]
+function merge<T, U>(objA: T, objB:U){
+  return Object.assign(objA!,objB);
+  
+}
 
-let promise:Promise<string> = new Promise((resolve, reject)=>{
-   setTimeout(()=>{
-    resolve('resolve string Data')
-   },6767)
-})
+const data = merge({name:'Kanishka'},{age:30});
 
-promise.then((data)=>{
-  data.split('')
+console.log(data.age);
 
-})
+
