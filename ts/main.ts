@@ -81,3 +81,57 @@ const v2= new Truck;
 usevehicle(v1);
 usevehicle(v2);
 
+
+interface Bird{
+  type:'bird'
+  flyingSpeed:number;
+}
+
+interface Horse{
+  type:'horse'
+  runningSpeed:number;
+}
+
+interface Snake{
+  type:'snake'
+  crawlingSpeed:number;
+}
+
+type Animal = Bird | Horse | Snake
+
+function checkAnimalSpeed(animal:Animal){
+  let speed =0
+  switch(animal.type){
+     case 'bird':
+      speed= animal.flyingSpeed;
+      break;
+      case 'horse':
+        speed = animal.runningSpeed;
+        break;
+       case 'snake':
+        speed = animal.crawlingSpeed
+ }
+       
+    console.log('Speed oof the Animal is :'+ speed);
+      
+
+}
+
+const snake:Snake ={
+   crawlingSpeed : 30,
+   type:'snake'
+}
+
+const bird:Bird ={
+  flyingSpeed : 40,
+  type:'bird'
+}
+
+const horse:Horse ={
+  runningSpeed : 20,
+  type:'horse'
+}
+
+checkAnimalSpeed(snake);
+checkAnimalSpeed(horse);
+checkAnimalSpeed(bird);
