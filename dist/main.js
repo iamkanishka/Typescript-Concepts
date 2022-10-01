@@ -6,13 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 function Logger(loggingString) {
+    console.log('logger Factory');
     return function (constructor) {
         console.log(loggingString);
         console.log(constructor);
     };
 }
 function Component(template, hookId) {
+    console.log('Template Factory');
     return function (constructor) {
+        console.log('Componenet decorator');
         const hookEl = document.getElementById(hookId);
         const data = new constructor();
         if (hookEl) {
@@ -28,6 +31,7 @@ let Person = class Person {
     }
 };
 Person = __decorate([
+    Logger('hi this is from kanishka from logger decorator'),
     Component('<h1>Hi</h1>', 'app')
 ], Person);
 //# sourceMappingURL=main.js.map

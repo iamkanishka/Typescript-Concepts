@@ -1,4 +1,6 @@
 function Logger(loggingString:string){
+  console.log('logger Factory');
+  
 return function (constructor:Function){
   console.log(loggingString);
   console.log(constructor);
@@ -6,7 +8,11 @@ return function (constructor:Function){
 }
 
 function Component(template:string, hookId:string){
+  console.log('Template Factory');
+
  return function (constructor:any){
+  console.log('Componenet decorator');
+  
       const hookEl =  document.getElementById(hookId);
       const data = new  constructor()
       if(hookEl){
@@ -15,7 +21,7 @@ function Component(template:string, hookId:string){
       }
  }
 }
-
+@Logger('hi this is from kanishka from logger decorator')
 @Component('<h1>Hi</h1>','app')
 class Person{
   name= 'kanishka';
