@@ -11,6 +11,16 @@ function Logger(loggingString) {
         console.log(constructor);
     };
 }
+function Component(template, hookId) {
+    return function (constructor) {
+        const hookEl = document.getElementById(hookId);
+        const data = new constructor();
+        if (hookEl) {
+            hookEl.innerHTML = template;
+            hookEl.querySelector('h1').textContent = data.name;
+        }
+    };
+}
 let Person = class Person {
     constructor() {
         this.name = 'kanishka';
@@ -18,6 +28,6 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    Logger('logging for the Person class from the decorator Factory')
+    Component('<h1>Hi</h1>', 'app')
 ], Person);
 //# sourceMappingURL=main.js.map
