@@ -66,4 +66,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 40. Implement Intersection Types in the Typescript.
 41. Type Guards in the Typescript. Type guard checking for the numbers, objects and Classes.
 42. Discriminated Union Types in the Typescript.
+43. DOM and Typecasting in the Typescript. Cast Values in the Typescript.
 

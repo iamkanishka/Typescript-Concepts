@@ -75,4 +75,9 @@ const horse = {
 checkAnimalSpeed(snake);
 checkAnimalSpeed(horse);
 checkAnimalSpeed(bird);
+const paragraph = document.getElementById('user-input');
+paragraph.value = 'user Input';
+if (paragraph) {
+    paragraph.value = 'user Inputt';
+}
 //# sourceMappingURL=main.js.map

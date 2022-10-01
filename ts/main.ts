@@ -135,3 +135,10 @@ const horse:Horse ={
 checkAnimalSpeed(snake);
 checkAnimalSpeed(horse);
 checkAnimalSpeed(bird);
+
+const paragraph = <HTMLInputElement> document.getElementById('user-input');
+paragraph.value = 'user Input'
+
+if(paragraph){
+  (paragraph as HTMLInputElement).value='user Inputt'
+}
