@@ -31,5 +31,36 @@ class Person{
   }
 }
 
-// const person = new Person();
-// console.log(person);
+
+function Log(target:any, propertyName:string){
+ console.log(target);
+ console.log(propertyName);
+ 
+}
+
+class Product{
+  @Log
+  title: string;
+  private _price: number;
+
+  constructor(title:string, price:number){
+    this.title=title
+    this._price=price
+  }
+
+  set price(value:number){
+    if(value>0){
+      this._price=value
+    }else{
+      throw new Error('Price Shold be pisitive number')
+    }
+  }
+
+  getPricewithTax(tax:number){
+   return this._price
+  }
+}
+
+const product = new Product('new Product', 12);
+
+console.log(product);

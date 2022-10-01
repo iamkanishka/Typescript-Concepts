@@ -34,4 +34,30 @@ Person = __decorate([
     Logger('hi this is from kanishka from logger decorator'),
     Component('<h1>Hi</h1>', 'app')
 ], Person);
+function Log(target, propertyName) {
+    console.log(target);
+    console.log(propertyName);
+}
+class Product {
+    constructor(title, price) {
+        this.title = title;
+        this._price = price;
+    }
+    set price(value) {
+        if (value > 0) {
+            this._price = value;
+        }
+        else {
+            throw new Error('Price Shold be pisitive number');
+        }
+    }
+    getPricewithTax(tax) {
+        return this._price;
+    }
+}
+__decorate([
+    Log
+], Product.prototype, "title", void 0);
+const product = new Product('new Product', 12);
+console.log(product);
 //# sourceMappingURL=main.js.map
