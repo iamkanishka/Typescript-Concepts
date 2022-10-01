@@ -23,12 +23,18 @@ type universal = combinable & numeric;
 
 var x: universal = 10
 
+function getAdd(a: string, b: string):string;
+function getAdd(a: number, b: number):number;
+function getAdd(a: string, b: number):string;
+function getAdd(a: number, b: string):number;
 function getAdd(a: combinable, b: combinable) {
   if (typeof a === 'string' || typeof b === 'string') {
     return a.toString() + b.toString();
   }
   return a + b;
 }
+
+const result = getAdd(1,4)
 
 type unknownEmployee = Admin | Employee
 

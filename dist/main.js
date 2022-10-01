@@ -11,6 +11,7 @@ function getAdd(a, b) {
     }
     return a + b;
 }
+const result = getAdd(1, 4);
 function printEmployee(emp) {
     console.log('name' + emp.name);
     if ('roles' in emp) {
