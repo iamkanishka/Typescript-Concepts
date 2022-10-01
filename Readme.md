@@ -78,4 +78,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 52. Implement Generics for the Classes in the Typescript.
 53. Generic Utilty Types like Partial Readonly in Typescript.
 54. Introduction to Decorators, Create a First Class Decorator in the Typescript.
+55. Creating Decorators with Decorator  Factories in the Typescript.
 

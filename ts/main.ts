@@ -1,10 +1,11 @@
-function logger(constructor:Function){
-  console.log('logging the data');
+function Logger(loggingString:string){
+return function (constructor:Function){
+  console.log(loggingString);
   console.log(constructor);
-  
-  
 }
-@logger
+}
+
+@Logger('logging for the Person class from the decorator Factory')
 class Person{
   name= 'kanishka';
   constructor(){
