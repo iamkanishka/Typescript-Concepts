@@ -1,53 +1,21 @@
 "use strict";
-function getCountandDescribe(element) {
-    let text = 'Got No Value';
-    if (element.length == 1) {
-        text = 'Got 1 value';
-    }
-    if (element.length > 1) {
-        text = 'Got' + element.length + 'value';
-    }
-    return [element, text];
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function logger(constructor) {
+    console.log('logging the data');
+    console.log(constructor);
 }
-console.log(getCountandDescribe(['zdfv']));
-function extractObject(obj, key) {
-    return obj[key];
-}
-extractObject({ name: "kanishka", age: 77 }, 'age');
-class dataStorage {
+let Person = class Person {
     constructor() {
-        this.data = [];
+        this.name = 'kanishka';
+        console.log('Creating Object');
     }
-    addData(item) {
-        this.data.push(item);
-    }
-    removeData(item) {
-        this.data.splice(this.data.indexOf(item), 1);
-    }
-    getData() {
-        return [...this.data];
-    }
-}
-const stringStorage = new dataStorage();
-stringStorage.addData('kanishka');
-stringStorage.addData('naik');
-stringStorage.addData('Gadgetguy');
-stringStorage.addData('saxasxasx');
-stringStorage.removeData('naik');
-console.log(stringStorage.getData());
-const numberStorage = new dataStorage();
-numberStorage.addData(1);
-numberStorage.addData(2);
-numberStorage.addData(3);
-numberStorage.addData(3);
-numberStorage.removeData(2);
-console.log(numberStorage.getData());
-function addCourse(title, description, addedDate) {
-    let data = {};
-    data.title = title;
-    data.description = description,
-        data.addedDate = addedDate;
-    return data;
-}
-let names = ['Kannu', 'laial'];
+};
+Person = __decorate([
+    logger
+], Person);
 //# sourceMappingURL=main.js.map
