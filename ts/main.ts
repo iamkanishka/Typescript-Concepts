@@ -19,18 +19,30 @@ function Component(template:string, hookId:string){
         hookEl.innerHTML = template
         hookEl.querySelector('h1')!.textContent = data.name
       }
+      return class{
+        name='Gadgetguy'
+        getPrice(){}
+      }
  }
 }
+
+
 @Logger('hi this is from kanishka from logger decorator')
 @Component('<h1>Hi</h1>','app')
 class Person{
   name= 'kanishka';
   constructor(){
     console.log('Creating Object');
-    
   }
+  
+  getPrice() {}
+   
 }
 
+
+const person = new Person();
+
+console.log(person);
 
 function Log(target:any, propertyName:string){
  console.log(target);

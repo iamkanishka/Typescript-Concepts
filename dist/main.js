@@ -25,6 +25,12 @@ function Component(template, hookId) {
             hookEl.innerHTML = template;
             hookEl.querySelector('h1').textContent = data.name;
         }
+        return class {
+            constructor() {
+                this.name = 'Gadgetguy';
+            }
+            getPrice() { }
+        };
     };
 }
 let Person = class Person {
@@ -32,11 +38,14 @@ let Person = class Person {
         this.name = 'kanishka';
         console.log('Creating Object');
     }
+    getPrice() { }
 };
 Person = __decorate([
     Logger('hi this is from kanishka from logger decorator'),
     Component('<h1>Hi</h1>', 'app')
 ], Person);
+const person = new Person();
+console.log(person);
 function Log(target, propertyName) {
     console.log(target);
     console.log(propertyName);
