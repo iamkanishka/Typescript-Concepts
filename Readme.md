@@ -82,4 +82,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 56. Creating a Simple angular Component Decotaor in the Typescipt.
 57. Adding Multiple decorators in teh Typescript. Check Which Decorator will execute First.
 58. Implement Decorators for the Class Properties in the Typescript.
+59. Implememt Decorators for the Accessot, Methods and Parameters for tehe classs in Typescript.
 

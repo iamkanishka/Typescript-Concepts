@@ -37,6 +37,29 @@ function Log(target:any, propertyName:string){
  console.log(propertyName);
  
 }
+function Log2(target:any, propertyName:string, descriptor:PropertyDescriptor){
+  console.log('Accessor Decorator');
+  console.log(target);
+  console.log(propertyName);
+  console.log(descriptor);
+ }
+
+ function Log3(target:any, propertyName:string, descriptor:PropertyDescriptor){
+  console.log('Method Decorator');
+  console.log(target);
+  console.log(propertyName);
+  console.log(descriptor);
+ }
+
+ function Log4(target:any, propertyName:string, position:number){
+  console.log('parameter Decorator');
+  console.log(target);
+  console.log(propertyName);
+  console.log(position);
+ }
+ 
+ 
+ 
 
 class Product{
   @Log
@@ -48,6 +71,7 @@ class Product{
     this._price=price
   }
 
+  @Log2
   set price(value:number){
     if(value>0){
       this._price=value
@@ -56,8 +80,9 @@ class Product{
     }
   }
 
-  getPricewithTax(tax:number){
-   return this._price
+  @Log3
+  getPricewithTax( @Log4 tax:number){
+   return this._price+tax
   }
 }
 
