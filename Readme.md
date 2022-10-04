@@ -88,3 +88,5 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 62. Return Types of the other Decorators in the Typescript.
 63. Return Property Descriptor Data from the Method Decorator in the typescript.
 64. Implement Property Validation Decorators in teh Typescript - Part 1.
+65. Implement Property Validation Decorators in teh Typescript - Part 2.
+
