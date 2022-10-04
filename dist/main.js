@@ -5,30 +5,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function Autobind(target, name, descriptor) {
-    console.log(descriptor);
-    const orginalMethod = descriptor.value;
-    const desc = {
-        configurable: true,
-        enumerable: false,
-        get() {
-            return orginalMethod.bind(this);
-        }
-    };
-    return desc;
+function Required(target, name) {
 }
-class Person {
-    constructor() {
-        this.message = "hai kanishka";
-    }
-    getMessage() {
-        console.log(this.message);
+class Course {
+    constructor(title, price) {
+        this.title = title;
+        this.price = price;
     }
 }
 __decorate([
-    Autobind
-], Person.prototype, "getMessage", null);
-const button = document.querySelector('button');
-const p = new Person();
-button === null || button === void 0 ? void 0 : button.addEventListener('click', p.getMessage);
+    Required
+], Course.prototype, "title", void 0);
+__decorate([
+    Required
+], Course.prototype, "price", void 0);
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const titleEL = document.getElementById('course-title');
+    const priceEL = document.getElementById('course-price');
+    const title = titleEL.value;
+    const price = +priceEL.value;
+    const courseObj = new Course(title, price);
+    console.log(courseObj);
+});
 //# sourceMappingURL=main.js.map

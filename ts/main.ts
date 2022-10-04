@@ -1,32 +1,41 @@
-
-function Autobind(target:any, name:string, descriptor:PropertyDescriptor){
-  console.log(descriptor);
-  const orginalMethod  = descriptor.value
-
-  const desc:PropertyDescriptor ={
-    configurable :true,
-    enumerable:false,
-    get(){
-      return orginalMethod.bind(this)
-    }
+interface validationConfig{
+  [property:string]:{
+    [validationProperty:string]:string[]
   }
-  return desc
-  
+  // course:{
+  //   title:['required'],
+  //   price:['required'],
+
+  // }
 }
 
-class Person{
-  message ="hai kanishka";
+function Required(target:any, name:string){
 
-  @Autobind
-  getMessage(){
-    console.log(this.message);
-
- }
+}
+class Course{
+   @Required
+   title:string;
+   
+   @Required
+   price:number;
+   constructor(title:string, price:number){
+    this.title=title;
+    this.price=price;
+   }
 }
 
-const button = document.querySelector('button');
-const p = new Person();
-button?.addEventListener('click',p.getMessage);
+const form = document.querySelector('form')!;
 
+form.addEventListener('submit',(event)=>{
+  event.preventDefault();
+  const titleEL = document.getElementById('course-title') as HTMLInputElement;
+  const priceEL = document.getElementById('course-price') as HTMLInputElement;
+ 
+   const title = titleEL.value;
+   const price = +priceEL.value;
 
+   const courseObj = new Course(title, price);
+   console.log(courseObj);
+   
 
+})
