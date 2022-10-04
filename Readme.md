@@ -86,3 +86,4 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 60. Returning the constructor function from the class Decorators in the Typescript.
 61. Retruning Class Decorator extending constructor Functionn in the Typescript.
 62. Return Types of the other Decorators in the Typescript.
+63. Return Property Descriptor Data from the Method Decorator in the typescript.
