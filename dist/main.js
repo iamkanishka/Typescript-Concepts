@@ -16,20 +16,18 @@ function Logger(loggingString) {
     };
 }
 function Component(template, hookId) {
-    console.log('Template Factory');
+    console.log('Componenet Template Factory');
     return function (constructor) {
-        console.log('Componenet decorator');
-        const hookEl = document.getElementById(hookId);
-        const data = new constructor();
-        if (hookEl) {
-            hookEl.innerHTML = template;
-            hookEl.querySelector('h1').textContent = data.name;
-        }
-        return class {
-            constructor() {
-                this.name = 'Gadgetguy';
+        return class extends constructor {
+            constructor(...args) {
+                super();
+                const hookEl = document.getElementById(hookId);
+                const data = new constructor();
+                if (hookEl) {
+                    hookEl.innerHTML = template;
+                    hookEl.querySelector('h1').textContent = data.name;
+                }
             }
-            getPrice() { }
         };
     };
 }
