@@ -15,6 +15,25 @@ function autoBind(target, name, descriptor) {
     };
     return newDescriptor;
 }
+function validate(validatableInput) {
+    let isValid = true;
+    if (validatableInput.required) {
+        isValid = isValid && validatableInput.value.toString().trim().length !== 0;
+    }
+    if (validatableInput.minLength != null && typeof validatableInput.value === 'string') {
+        isValid = isValid && validatableInput.value.length >= validatableInput.minLength;
+    }
+    if (validatableInput.maxLength != null && typeof validatableInput.value === 'string') {
+        isValid = isValid && validatableInput.value.length <= validatableInput.maxLength;
+    }
+    if (validatableInput.min != null && typeof validatableInput.value === 'number') {
+        isValid = isValid && validatableInput.value >= validatableInput.min;
+    }
+    if (validatableInput.max != null && typeof validatableInput.value === 'number') {
+        isValid = isValid && validatableInput.value <= validatableInput.max;
+    }
+    return isValid;
+}
 var ProjectStatus;
 (function (ProjectStatus) {
     ProjectStatus[ProjectStatus["Active"] = 0] = "Active";
@@ -34,7 +53,7 @@ class ProjectInput {
         this.formEl = document.querySelector('form');
         this.titleEl = document.getElementById('title');
         this.descriptionEl = document.getElementById('description');
-        this.projectEl = document.getElementById('people');
+        this.peopleEl = document.getElementById('people');
         this.configure();
     }
     configure() {
@@ -42,10 +61,45 @@ class ProjectInput {
     }
     submitHandler(event) {
         event.preventDefault();
+        const userInput = this.gatherInput();
+        if (Array.isArray(userInput)) {
+            const [title, description, people] = userInput;
+            console.log(userInput);
+            this.clearInput();
+        }
+    }
+    clearInput() {
+        this.titleEl.value = "";
+        this.descriptionEl.value = "";
+        this.peopleEl.value = "";
+    }
+    gatherInput() {
         const title = this.titleEl.value;
         const description = this.descriptionEl.value;
-        const project = this.projectEl.value;
-        console.log(title, description, project);
+        const people = +this.peopleEl.value;
+        const titleValidatable = {
+            value: title,
+            required: true
+        };
+        const descriptionValidatable = {
+            value: description,
+            required: true,
+            minLength: 4,
+            maxLength: 45
+        };
+        const peopleValidatable = {
+            value: people,
+            required: true,
+            min: 1,
+            max: 10
+        };
+        if (!validate(titleValidatable) ||
+            !validate(descriptionValidatable) ||
+            !validate(peopleValidatable)) {
+            alert('Input Values are not valid');
+            return;
+        }
+        return [title, description, people];
     }
 }
 __decorate([
