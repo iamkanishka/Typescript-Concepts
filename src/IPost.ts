@@ -1,4 +1,4 @@
-namespace App{
+
 export interface IPost{
     title:string;
     description:string
@@ -12,4 +12,3 @@ export class Post implements IPost{
     }
 }
 
-}

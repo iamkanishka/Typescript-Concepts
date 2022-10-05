@@ -1,5 +1,6 @@
 ///<reference path="IPost.ts"></reference>
-namespace App{
+import {Post} from './IPost.js'
+
 const post = new Post();
 console.log(post);
-}
+

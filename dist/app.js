@@ -1,7 +1,4 @@
-"use strict";
-var App;
-(function (App) {
-    const post = new App.Post();
-    console.log(post);
-})(App || (App = {}));
+import { Post } from './IPost.js';
+const post = new Post();
+console.log(post);
 //# sourceMappingURL=app.js.map
