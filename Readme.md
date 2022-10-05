@@ -98,6 +98,7 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 72. Implement NameSpace & Modules in teh Typescript.
 73. Include Typescript Files using ES^ Modules imports
 74. Install Webpack, ts-loader and execute the Typescript Code using WebPack in the Project.
+75. Configure Webpack using Webpack.config.js to compile typescript code uin to the js code.
 
 
 

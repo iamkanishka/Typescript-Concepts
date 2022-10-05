@@ -1,5 +1,5 @@
-import { Post } from "./components/Post.js";
-import { Category } from "./components/Category.js";
+import { Post } from "./components/Post";
+import { Category } from "./components/Category";
 
 new Post();
 new Category();
