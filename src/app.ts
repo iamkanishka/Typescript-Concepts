@@ -71,13 +71,22 @@ class Project {
 }
 
 
-type Listener = (projects: Project[]) => void
-class ProjectState {
+type Listener<T> = (projects: T[]) => void
+
+class State<T>{
+    protected listeners:  Listener<T>[] = []
+    addListener(listener: Listener<T>) {
+        this.listeners.push(listener)
+    }
+
+}
+class ProjectState extends State<Project> {
     private static instance: ProjectState;
     private projects: Project[] = []
 
-    private listeners: Listener[] = []
-    private constructor() { }
+    private constructor() {
+        super()
+    }
 
     static getInstance() {
         if (this.instance) {
@@ -88,9 +97,7 @@ class ProjectState {
         return this.instance
     }
 
-    addListener(listener: Listener) {
-        this.listeners.push(listener)
-    }
+   
 
     addProject(title: string, description: string, people: number) {
         const project = new Project(Math.random().toString(), title, description, people, ProjectStatus.Active)
@@ -187,16 +194,24 @@ class ProjectInput {
 
 class ProjectLists {
     assignedProjects: Project[] = []
-    constructor() {
+    constructor(private type:string) {
         projectState.addListener((projects: Project[]) => {
-            this.assignedProjects = projects
-            this.renderProjects()
+          //  this.assignedProjects = projects
+           const relevantProjetcs = projects.filter(project=>{
+            if(this.type==='active'){
+                return project.status === ProjectStatus.Active;
+            }
+            return project.status === ProjectStatus.Completed;
+
+           })  
+           this.assignedProjects = relevantProjetcs
+          this.renderProjects()
 
         })
     }
 
     private renderProjects() {
-        const listEl = document.getElementById('projects-list') as HTMLUListElement;
+        const listEl = document.getElementById(`${this.type}-projects-list`) as HTMLUListElement;
         listEl.innerHTML=''
         for (const project of this.assignedProjects) {
             const listItem = document.createElement('li');
@@ -208,4 +223,5 @@ class ProjectLists {
 
 
 const projectInput = new ProjectInput()
-const projectList = new ProjectLists()
+const activeProjectList = new ProjectLists('active')
+const finishedProjectList = new ProjectLists('finished')

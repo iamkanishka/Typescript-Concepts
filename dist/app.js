@@ -48,10 +48,18 @@ class Project {
         this.status = status;
     }
 }
-class ProjectState {
+class State {
     constructor() {
-        this.projects = [];
         this.listeners = [];
+    }
+    addListener(listener) {
+        this.listeners.push(listener);
+    }
+}
+class ProjectState extends State {
+    constructor() {
+        super();
+        this.projects = [];
     }
     static getInstance() {
         if (this.instance) {
@@ -59,9 +67,6 @@ class ProjectState {
         }
         this.instance = new ProjectState();
         return this.instance;
-    }
-    addListener(listener) {
-        this.listeners.push(listener);
     }
     addProject(title, description, people) {
         const project = new Project(Math.random().toString(), title, description, people, ProjectStatus.Active);
@@ -130,15 +135,22 @@ __decorate([
     autoBind
 ], ProjectInput.prototype, "submitHandler", null);
 class ProjectLists {
-    constructor() {
+    constructor(type) {
+        this.type = type;
         this.assignedProjects = [];
         projectState.addListener((projects) => {
-            this.assignedProjects = projects;
+            const relevantProjetcs = projects.filter(project => {
+                if (this.type === 'active') {
+                    return project.status === ProjectStatus.Active;
+                }
+                return project.status === ProjectStatus.Completed;
+            });
+            this.assignedProjects = relevantProjetcs;
             this.renderProjects();
         });
     }
     renderProjects() {
-        const listEl = document.getElementById('projects-list');
+        const listEl = document.getElementById(`${this.type}-projects-list`);
         listEl.innerHTML = '';
         for (const project of this.assignedProjects) {
             const listItem = document.createElement('li');
@@ -148,5 +160,6 @@ class ProjectLists {
     }
 }
 const projectInput = new ProjectInput();
-const projectList = new ProjectLists();
+const activeProjectList = new ProjectLists('active');
+const finishedProjectList = new ProjectLists('finished');
 //# sourceMappingURL=app.js.map
