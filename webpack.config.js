@@ -4,7 +4,12 @@ module.exports ={
     output:{
         filename:'bundle.js',
         path:path.resolve(__dirname, 'dist'),
+        publicPath:'/dist/'
     },
+    mode: 'development',
+
+   
+    devtool:'inline-source-map',
     module:{
         rules:[{
           test:/\.ts$/,
