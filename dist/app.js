@@ -153,10 +153,29 @@ class ProjectLists {
         const listEl = document.getElementById(`${this.type}-projects-list`);
         listEl.innerHTML = '';
         for (const project of this.assignedProjects) {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = project.title;
-            listEl.appendChild(listItem);
+            new ProjectItem(project, listEl);
         }
+    }
+}
+class ProjectItem {
+    constructor(project, element) {
+        this.project = project;
+        this.element = element;
+        this.liElement = document.createElement('li');
+        this.renderContent();
+    }
+    get person() {
+        if (this.project.people === 1) {
+            return "1 Person";
+        }
+        return `${this.project.people} Persons`;
+    }
+    renderContent() {
+        const liData = `<h3>${this.project.title}</h3>
+        <div><strong>${this.person}  Assigned</strong></div>
+        <div>${this.project.description}</div>`;
+        this.liElement.innerHTML = liData;
+        this.element.appendChild(this.liElement);
     }
 }
 const projectInput = new ProjectInput();

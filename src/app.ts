@@ -74,7 +74,7 @@ class Project {
 type Listener<T> = (projects: T[]) => void
 
 class State<T>{
-    protected listeners:  Listener<T>[] = []
+    protected listeners: Listener<T>[] = []
     addListener(listener: Listener<T>) {
         this.listeners.push(listener)
     }
@@ -97,7 +97,7 @@ class ProjectState extends State<Project> {
         return this.instance
     }
 
-   
+
 
     addProject(title: string, description: string, people: number) {
         const project = new Project(Math.random().toString(), title, description, people, ProjectStatus.Active)
@@ -136,7 +136,7 @@ class ProjectInput {
         const userInput = this.gatherInput();
         if (Array.isArray(userInput)) {
             const [title, description, people] = userInput
-           // console.log(userInput);
+            // console.log(userInput);
             projectState.addProject(title, description, people)
 
             this.clearInput();
@@ -194,30 +194,55 @@ class ProjectInput {
 
 class ProjectLists {
     assignedProjects: Project[] = []
-    constructor(private type:string) {
+    constructor(private type: string) {
         projectState.addListener((projects: Project[]) => {
-          //  this.assignedProjects = projects
-           const relevantProjetcs = projects.filter(project=>{
-            if(this.type==='active'){
-                return project.status === ProjectStatus.Active;
-            }
-            return project.status === ProjectStatus.Completed;
+            //  this.assignedProjects = projects
+            const relevantProjetcs = projects.filter(project => {
+                if (this.type === 'active') {
+                    return project.status === ProjectStatus.Active;
+                }
+                return project.status === ProjectStatus.Completed;
 
-           })  
-           this.assignedProjects = relevantProjetcs
-          this.renderProjects()
+            })
+            this.assignedProjects = relevantProjetcs
+            this.renderProjects()
 
         })
     }
 
     private renderProjects() {
         const listEl = document.getElementById(`${this.type}-projects-list`) as HTMLUListElement;
-        listEl.innerHTML=''
+        listEl.innerHTML = ''
         for (const project of this.assignedProjects) {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = project.title;
-            listEl.appendChild(listItem);
+            // const listItem = document.createElement('li');
+            // listItem.innerHTML = project.title;
+            // listEl.appendChild(listItem);
+            new ProjectItem(project, listEl)
         }
+    }
+}
+
+class ProjectItem {
+    liElement: HTMLLIElement
+
+    constructor(private project: Project, private element: HTMLUListElement) {
+        this.liElement = document.createElement('li');
+        this.renderContent()
+    }
+
+   get person(){
+    if(this.project.people ===1){
+        return "1 Person";
+    }
+    return `${this.project.people} Persons`
+   }
+
+    renderContent(){
+        const liData = `<h3>${this.project.title}</h3>
+        <div><strong>${this.person}  Assigned</strong></div>
+        <div>${this.project.description}</div>`
+        this.liElement.innerHTML=liData;
+        this.element.appendChild(this.liElement)
     }
 }
 

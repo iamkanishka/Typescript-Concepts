@@ -93,6 +93,8 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 67. Typescript Project - Add Resusable Validation Functionality to the Form Inputs - Part 2.
 68. Typescript Project - Render projects in the List that are added by the form - Part 3.
 69. Typescript Project - Filter projects, Refactor existing Code with inheritance and Generucs - Part 4.
+70. Typescript Project - Create LI Element in a Separate Class with getters to render data - Part 5.
+
 
 
 
