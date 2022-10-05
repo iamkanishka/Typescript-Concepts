@@ -1,6 +1,7 @@
-///<reference path="IPost.ts"></reference>
-import {Post} from './IPost.js'
+import { Post } from "./components/Post.js";
+import { Category } from "./components/Category.js";
 
-const post = new Post();
-console.log(post);
+new Post();
+new Category();
+
 

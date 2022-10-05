@@ -97,6 +97,7 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 71. Typescript Project - Impelement Drag and Drop Functionality for the List - Part 6.
 72. Implement NameSpace & Modules in teh Typescript.
 73. Include Typescript Files using ES^ Modules imports
+74. Install Webpack, ts-loader and execute the Typescript Code using WebPack in the Project.
 
 
 

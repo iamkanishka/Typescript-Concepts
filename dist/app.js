@@ -1,4 +1,5 @@
-import { Post } from './IPost.js';
-const post = new Post();
-console.log(post);
+import { Post } from "./components/Post.js";
+import { Category } from "./components/Category.js";
+new Post();
+new Category();
 //# sourceMappingURL=app.js.map
