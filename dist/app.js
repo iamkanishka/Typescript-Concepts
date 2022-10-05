@@ -48,6 +48,30 @@ class Project {
         this.status = status;
     }
 }
+class ProjectState {
+    constructor() {
+        this.projects = [];
+        this.listeners = [];
+    }
+    static getInstance() {
+        if (this.instance) {
+            return this.instance;
+        }
+        this.instance = new ProjectState();
+        return this.instance;
+    }
+    addListener(listener) {
+        this.listeners.push(listener);
+    }
+    addProject(title, description, people) {
+        const project = new Project(Math.random().toString(), title, description, people, ProjectStatus.Active);
+        this.projects.push(project);
+        for (const listenerFn of this.listeners) {
+            listenerFn(this.projects);
+        }
+    }
+}
+const projectState = ProjectState.getInstance();
 class ProjectInput {
     constructor() {
         this.formEl = document.querySelector('form');
@@ -64,7 +88,7 @@ class ProjectInput {
         const userInput = this.gatherInput();
         if (Array.isArray(userInput)) {
             const [title, description, people] = userInput;
-            console.log(userInput);
+            projectState.addProject(title, description, people);
             this.clearInput();
         }
     }
@@ -105,5 +129,24 @@ class ProjectInput {
 __decorate([
     autoBind
 ], ProjectInput.prototype, "submitHandler", null);
+class ProjectLists {
+    constructor() {
+        this.assignedProjects = [];
+        projectState.addListener((projects) => {
+            this.assignedProjects = projects;
+            this.renderProjects();
+        });
+    }
+    renderProjects() {
+        const listEl = document.getElementById('projects-list');
+        listEl.innerHTML = '';
+        for (const project of this.assignedProjects) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = project.title;
+            listEl.appendChild(listItem);
+        }
+    }
+}
 const projectInput = new ProjectInput();
+const projectList = new ProjectLists();
 //# sourceMappingURL=app.js.map

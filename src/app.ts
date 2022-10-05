@@ -50,6 +50,11 @@ function validate(validatableInput: Validatable) {
     return isValid
 }
 
+
+
+
+
+
 enum ProjectStatus {
     Active,
     Completed
@@ -60,10 +65,43 @@ class Project {
         public id: string,
         public title: string,
         public description: string,
-        public people: string,
+        public people: number,
         public status: ProjectStatus,
     ) { }
 }
+
+
+type Listener = (projects: Project[]) => void
+class ProjectState {
+    private static instance: ProjectState;
+    private projects: Project[] = []
+
+    private listeners: Listener[] = []
+    private constructor() { }
+
+    static getInstance() {
+        if (this.instance) {
+            return this.instance;
+        }
+
+        this.instance = new ProjectState();
+        return this.instance
+    }
+
+    addListener(listener: Listener) {
+        this.listeners.push(listener)
+    }
+
+    addProject(title: string, description: string, people: number) {
+        const project = new Project(Math.random().toString(), title, description, people, ProjectStatus.Active)
+        this.projects.push(project)
+        for (const listenerFn of this.listeners) {
+            listenerFn(this.projects)
+
+        }
+    }
+}
+const projectState = ProjectState.getInstance();
 
 class ProjectInput {
     formEl: HTMLFormElement;
@@ -80,7 +118,7 @@ class ProjectInput {
 
 
 
-        this.configure()
+        this.configure();
     }
     private configure() {
         this.formEl.addEventListener('submit', this.submitHandler)
@@ -88,20 +126,22 @@ class ProjectInput {
     @autoBind
     private submitHandler(event: Event) {
         event.preventDefault()
-       const userInput =  this.gatherInput();
-       if(Array.isArray(userInput)){
-        const [title, description, people] =userInput
-        console.log(userInput);
-        this.clearInput();
-        
-       }
+        const userInput = this.gatherInput();
+        if (Array.isArray(userInput)) {
+            const [title, description, people] = userInput
+           // console.log(userInput);
+            projectState.addProject(title, description, people)
+
+            this.clearInput();
+
+        }
 
     }
 
-    private clearInput(){
-        this.titleEl.value="";
-        this.descriptionEl.value="";
-        this.peopleEl.value="";
+    private clearInput() {
+        this.titleEl.value = "";
+        this.descriptionEl.value = "";
+        this.peopleEl.value = "";
 
     }
 
@@ -145,4 +185,27 @@ class ProjectInput {
 }
 
 
+class ProjectLists {
+    assignedProjects: Project[] = []
+    constructor() {
+        projectState.addListener((projects: Project[]) => {
+            this.assignedProjects = projects
+            this.renderProjects()
+
+        })
+    }
+
+    private renderProjects() {
+        const listEl = document.getElementById('projects-list') as HTMLUListElement;
+        listEl.innerHTML=''
+        for (const project of this.assignedProjects) {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = project.title;
+            listEl.appendChild(listItem);
+        }
+    }
+}
+
+
 const projectInput = new ProjectInput()
+const projectList = new ProjectLists()

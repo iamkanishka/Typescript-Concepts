@@ -91,5 +91,7 @@ So We will be Looking These Tupscript Concepts and Features and Learn as we go o
 65. Implement Property Validation Decorators in teh Typescript - Part 2.
 66. Typescript Project - Create Class that takes all the data from the form - Part 1.
 67. Typescript Project - Add Resusable Validation Functionality to the Form Inputs - Part 2.
+68. Typescript Project - Render projects in the List that are added by the form - Part 3.
+
 
 
